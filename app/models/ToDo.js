@@ -8,19 +8,19 @@ export class ToDo {
 
   static toDoForm() {
     return /* html */ `
-    <form class="d-flex" onsubmit="app.ToDosController.createToDo()">
-      <div class="d-flex mx-2 flex-column">
+    <form onsubmit="app.ToDosController.createToDo()">
+      <div class="d-flex w-75 flex-column">
       </div>
-      <div class="d-flex mx-2 flex-column flex-grow-1">
+      <div class="d-flex w-75 flex-column flex-grow-1">
         <label for="description">Description</label>
         <input type="text" placeholder="Description...." id="description">
       </div>
-      <div class="d-flex mx-2 flex-column">
-        <label for="creator">Reported By</label>
+      <div class="d-flex w-75 flex-column">
+        <label for="creator">Written By</label>
         <input type="text" placeholder="Reported By...." id="creatorId">
       </div>
-      <div class="d-flex mx-2 align-items-end">
-        <button>submit</button>
+      <div class="d-flex w-75 align-items-end">
+        <button class="btn btn-success">Submit</button>
       </div>
     </form>
     `
@@ -28,7 +28,7 @@ export class ToDo {
 
   get EditTemplate() {
     return /* html */ `
-    <tr class="selectable" id="${this.id}">
+    <tr class="selectable w-75 ms-4" id="${this.id}">
       <td style="opacity: 70%;" class="p-2" contentEditable id="${this.id}-description"></td>
       <td style="opacity: 70%;" class="p-2" contentEditable id="${this.id}-creatorId"></td>
       <td style="opacity: 70%;" class="p-2">

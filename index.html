@@ -38,33 +38,50 @@
   </header>
 
   <main class="container-fluid">
-
-    <div class="row justify-content-center">
-      <div id="toDoForm" class="col-md-3 offset-6">
-        <!-- STUB TO-DO CREATOR [FORM] -->
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions">To-Do List</button>
+    
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-    </div>
+      <div class="offcanvas-body">
 
-    <div class="row justify-content-end mt-3">
-      <div class="col-md-4 my-3 mx-4">
-        <span>To-Do List Count:
-          <div id="toDoCount">
-            <!-- STUB TOTAL TO-DO COUNT ------------------------>
+
+        <div class="row justify-content-center">
+          <div id="toDoForm" class="col-12">
+
+            <!-- STUB TO-DO CREATOR [FORM] -->
           </div>
-        </span>
+        </div>
+  
+        <div class="row justify-content-end mt-3">
+          <div class="col-12 my-3">
+            <ul>To-Do List Count:
+              <li class="ms-3" id="toDoCount">
 
-        <table id="toDos" class="rounded-3">
-          <!-- STUB TO-DO LIST TEMPLATE ------------------------>
-        </table>
+                <!-- STUB TOTAL TO-DO COUNT ------------------------>
+              </li>
+            </ul>
+  
+            <table id="toDos" class="rounded-3">
+              
+              <!-- STUB TO-DO LIST TEMPLATE ------------------------>
+            </table>
+          </div>
+        </div>
+
+
       </div>
     </div>
-
 
   </main>
   <footer class="bg-dark text-light">
-    <div class="text-center no-select">
+    <!-- <div class="text-center no-select">
       <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
+    </div> -->
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
