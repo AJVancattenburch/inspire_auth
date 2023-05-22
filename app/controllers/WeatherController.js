@@ -6,6 +6,7 @@ import { setHTML } from "../utils/Writer.js"
 function _drawWeather() {
   console.log('drawing weather')
   const weather = AppState.weather
+  //TODO you should have two template, one for C, one for F and based on the value of the weathers temp you draw one or the other
   setHTML('weather', weather.WeatherTemplate)
 }
 

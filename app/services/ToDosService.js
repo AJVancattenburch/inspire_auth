@@ -19,9 +19,17 @@ class ToDosService {
   }
 
   async editToDo(id) {
-    const res = await api.put('api/todos/' + id)
-    const index = AppState.toDos.find(t => t.id == id)
+    //FIXME the data on the next line is sending a request to ...todos/[object Object]
+    const update = AppState.toDos.find(t => t.id == id)
+    update.completed = !update.completed
+    const res = await api.put('api/todos/' + id, update)
+    const index = AppState.toDos.findIndex(t => t.id == id)
+    if (index == -1) {
+    console.log('no splicing for you!', error)
+    }
     AppState.toDos.splice(index, 1, new ToDo(res.data))
+    AppState.emit('toDos', id)
+    // TODO will this update draw?
   }
 
   async deleteToDo(id) {

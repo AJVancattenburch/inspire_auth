@@ -25,6 +25,10 @@ export class ToDo {
     </form>
     `
   }
+  
+  get completedCheckbox() {
+    return this.completed ? 'checked' : ''
+  }
 
   get EditTemplate() {
     return /* html */ `
@@ -32,7 +36,7 @@ export class ToDo {
       <td style="opacity: 70%;" class="p-2" contentEditable id="${this.id}-description"></td>
       <td style="opacity: 70%;" class="p-2" contentEditable id="${this.id}-creatorId"></td>
       <td style="opacity: 70%;" class="p-2">
-        <input class="text-light" type="checkbox" ${this.completed ? 'checked' : ''} id="${this.id}-completed">🔻
+        <input class="text-light" type="checkbox" onchange="${this.completed ? 'checked' : ''}" id="${this.id}-${this.completedCheckbox}">
       </td>
       <td style="opacity: 70%;" class="p-2 d-flex align-items-center"> 
         <button class="btn btn-success" onclick="app.ToDosController.editToDo('${this.id}')">Save</button>
@@ -49,6 +53,7 @@ export class ToDo {
       <td style="opacity: 90%;" class="p-2">${this.creatorId}</td>
       <td style="opacity: 90%;" class="p-2"><i class="mdi mdi-${this.completed ? 'check text-success' : 'completed text-danger'}"></i></td>
       <td class="on-hover"> 
+        <input class="text-light" type="checkbox" onchange="app.ToDosController.editToDo('${this.id}')" id="${this.id}-${this.completedCheckbox}">
           <i class="mdi mdi-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           </i>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

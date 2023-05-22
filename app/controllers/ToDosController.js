@@ -8,6 +8,7 @@ function _draw() {
   const toDos = AppState.toDos
   let template = `
   <tr>
+    <th>${toDos.filter(t => t.completed).length}/${AppState.toDos.length}</th>
     <th>Description</th>
     <th>Reported By</th>
     <th>Status</th>
@@ -23,12 +24,13 @@ function _drawForm() {
 
 function _drawToDoCount() {
   const toDos = AppState.toDos
-  const toDoCount = toDos.length
-  const template = toDos.map(t => t.Template).join('')
-  setHTML('toDos', template)
-  document.getElementById('toDoCount').innerText = toDoCount.toString()
+  let template = `
+  <h4>${toDos.filter(t => t.completed).length}/${AppState.toDos.length} Completed</h4>
+  `
+  setHTML('toDoCount', template)
   // console.log('sssoooooo...')
 }
+
 
 
 export class ToDosController {
@@ -85,13 +87,7 @@ export class ToDosController {
 
   async editToDo(id) {
     try {
-      const update = {
-        id,
-        description: document.getElementById(id + '-description').innerText,
-        creatorId: document.getElementById(id + '-creatorId').innerText,
-        completed: document.getElementById(id + '-completed').checked
-      }
-      await toDosService.editToDo(update)
+      await toDosService.editToDo(id)
       Pop.toast('Saved', 'success')
     } catch (error) {
       console.log(error)
