@@ -24,16 +24,9 @@
   </header>
 
   <main class="container-fluid">
-      
-    <!-- <section class="row container mt-5 pt-5">
-      <div class="col-12 mt-5 pt-5">
-        <h1 id="clock" class="text-center text-light mb-5"></h1>
-      </div>
-    </section> -->
 
     <div id="images"></div>
-
-
+    <!-- STUB 🕝 THE CLLLOOOOOOOOOOCK!!! 🕛 ------------------>
     <div id="clock" class="clock">
       <div class="outer-clock-face">
         <div class="marking marking-one"></div>
@@ -48,8 +41,8 @@
       </div>
     </div>
 
-
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" style="position: absolute; bottom: 1rem; right: 1rem;">Toggle bottom offcanvas</button>
+    <!-- STUB WEATHER OFFCANVAS --------------------------------------------->
+    <button class="btn btn-success pt-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" style="position: absolute; bottom: .5rem; right: 45%; opacity: .8;"> ^ <br>Weather Report</button>
 
     <div class="offcanvas offcanvas-bottom bg-dark" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
       <div class="offcanvas-header">
@@ -57,7 +50,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body small bg-dark">
-
+        <!-- NOTE START "WEATHER" OFFCANVAS BODY -->
         <div id="weather" class="row">
             <!-- <div class=
               "row justify-content-center">
@@ -76,7 +69,7 @@
             </div>
           </div> -->
         </div>
-
+        <!-- NOTE END "WEATHER" OFFCANVAS BODY -->
       </div>
     </div>
 
@@ -84,7 +77,6 @@
       aria-controls="offcanvasWithBothOptions">
       <span class="navbar-toggler-icon fs-1 pt-2">📃</span>
     </button>
-
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
       aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
@@ -92,10 +84,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <!-- NOTE START OFFCANVAS BODY -->
+        <!-- NOTE START "TO=DO" OFFCANVAS BODY -->
         <div class="row justify-content-center">
           <div id="toDoForm" class="col-12">
-
             <!-- STUB TO-DO CREATOR [FORM] -->
           </div>
         </div>
@@ -104,50 +95,28 @@
           <div class="col-12 my-3">
             <ul>To-Do List Count:
               <li class="ms-3" id="toDoCount">
-
                 <!-- STUB TOTAL TO-DO COUNT ------------------------>
               </li>
             </ul>
   
             <table id="toDos" class="rounded-3">
-              
               <!-- STUB TO-DO LIST TEMPLATE ------------------------>
             </table>
           </div>
         </div>
-        <!-- NOTE END OFFCANVAS BODY -->
+        <!-- NOTE END "TO-DO" OFFCANVAS BODY -->
       </div>
     </div>
 
     <div id="quotes" class="row mt-3 w-50">
-      <!-- <div class="row justify-content-center">
-        <div class="col-6">
-          <h1 class="text-center text-light mb-2 me-5">Quote</h1>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-6">
-          <h3 class="text-center text-light mb-2 me-5">Quote of the Day</h3>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-6">
-          <h3 class="text-center text-light mb-2 me-5">Random Quote</h3>
-        </div>
-      </div> -->
+      <!-- STUB "QUOTES" TEMPLATE --------------------------------->
     </div>
 
     <div id="imageInfo" class="row">
-
       <!-- STUB ACTIVE IMAGE INFORMATION CARD ---------------------->
     </div>
 
   </main>
-  <footer class="bg-dark text-light">
-    <!-- <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div> -->
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
@@ -160,8 +129,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
     integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-
   <script src="app/App.js" type="module"></script>
+
 </body>
 
 </html>
