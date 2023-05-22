@@ -33,33 +33,57 @@
 
     <div id="images"></div>
 
-    <div id="clock" class="row">
-      <div class="col-4 offset-5">
-        <iframe src="https://free.timeanddate.com/clock/i8uybx7n/n42/szw110/szh110/hoc09f/hbw0/hfc09f/cf100/hnce1ead6/fas30/fdi66/mqc000/mql15/mqw4/mqd98/mhc000/mhl15/mhw4/mhd98/mmc000/mml10/mmw1/mmd98/hhs2/hms2/hsv0" style="opacity: .8;" width="110" height="110"></iframe>
+
+    <div id="clock" class="clock">
+      <div class="outer-clock-face">
+        <div class="marking marking-one"></div>
+        <div class="marking marking-two"></div>
+        <div class="marking marking-three"></div>
+        <div class="marking marking-four"></div>
+        <div class="inner-clock-face">
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+        </div>
       </div>
     </div>
 
-    <div id="weather" class="row">
-        <!-- <div class=
-          "row justify-content-center">
-          <div class="col-12">
-            <h1 class="text-center text-light mb-5">Weather</h1>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" style="position: absolute; bottom: 1rem; right: 1rem;">Toggle bottom offcanvas</button>
+
+    <div class="offcanvas offcanvas-bottom bg-dark" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title offset-4 text-light" id="offcanvasBottomLabel">Current Weather</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body small bg-dark">
+
+        <div id="weather" class="row">
+            <!-- <div class=
+              "row justify-content-center">
+              <div class="col-12">
+                <h1 class="text-center text-light mb-5">Weather</h1>
+              </div>
+            </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h3 class="text-center text-light mb-5">Current Weather</h3>
+            </div>
           </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h3 class="text-center text-light mb-5">Forecast</h3>
+            </div>
+          </div> -->
         </div>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <h3 class="text-center text-light mb-5">Current Weather</h3>
-        </div>
+
       </div>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <h3 class="text-center text-light mb-5">Forecast</h3>
-        </div>
-      </div> -->
     </div>
 
-    <button id="offcanvas-btn" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-      aria-controls="offcanvasWithBothOptions">To-Do List</button>   
+    <button id="offcanvas-btn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions">
+      <span class="navbar-toggler-icon fs-1 pt-2">📃</span>
+    </button>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
       aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -93,6 +117,24 @@
         </div>
         <!-- NOTE END OFFCANVAS BODY -->
       </div>
+    </div>
+
+    <div id="quotes" class="row mt-3 w-50">
+      <!-- <div class="row justify-content-center">
+        <div class="col-6">
+          <h1 class="text-center text-light mb-2 me-5">Quote</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h3 class="text-center text-light mb-2 me-5">Quote of the Day</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h3 class="text-center text-light mb-2 me-5">Random Quote</h3>
+        </div>
+      </div> -->
     </div>
 
     <div id="imageInfo" class="row">

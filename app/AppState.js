@@ -29,6 +29,11 @@ class ObservableAppState extends EventEmitter {
   /**@type {import (./models/Weather.js).Weather[]} */
   weather = []
 
+  /**@type {import (./models/Qoute.js).Quote[]} */
+  quotes = []
+
+
+  clock = null
 
   // Used to load initial data
   init() {

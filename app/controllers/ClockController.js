@@ -1,29 +1,27 @@
-// import { AppState } from "../AppState.js";
+const secondHand = document.querySelector('.second-hand');
+const minsHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
 
-// function _drawClock(){
-//   let today = new Date();
-//   const months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-//   let month = months[today.getMonth()]
-//   let date = today.getDate()
-//   let hours = today.getHours()
-//   let minutes = today.getMinutes()
-//   let ampm = "AM"
-//   if(minutes < 10){
-//       minutes = "0" + minutes;
-//   }
-//   if(minutes < 1){
-//       today.getMinutes = "0" + "0"
-//   }
-//   if(hours > 12){
-//       hours -= 12;
-//       ampm = "PM";
-//   }
-//   document.getElementById('clock').innerHTML = `${hours}<span>:</span>${minutes} <span> </span> ${ampm} <br><h5> ${month} ${date}</h5>`
-// }
+ function setDate() {
+  const now = new Date();
 
-// export class ClockController{
-//   constructor(){
-//       AppState.on('clock', _drawClock)
-//       setInterval(_drawClock, 1000)
-//   }
-// }
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90;
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+  const hour = now.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+
+export class ClockController {
+  constructor() {
+    console.log("Clock Controller");
+    setInterval(setDate, 1000);
+    setDate();
+  }
+}

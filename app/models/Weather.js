@@ -15,24 +15,27 @@ export class Weather {
 
   get WeatherTemplate() {
     return /*html*/`
-    <div class="card col-3 offset-8 bg-dark" style="opacity: .9; position: absolute; right: 1rem; bottom: 2rem;">
-      <div class="card-header text-center bg-light mt-3">
-        <img class="card-img-top img-fluid" style="width: 3rem; height: 3rem;" src="http://openweathermap.org/img/wn/${this.icon}.png" alt="${this.title}">
-      </div>
+  <div class="card row bg-dark d-flex" style="opacity: .9;">
+    <div class="col-6 offset-4">
+      <img class="card-img-top img-fluid mb-2" style="width: 4rem; height: 4rem; margin-left: 3rem;" src="http://openweathermap.org/img/wn/${this.icon}.png" alt="${this.title}">
+      <h6 class="card-text text-light text-muted" style="width: 100%; height: 3rem; margin-right: 2rem;">${this.title} / ${this.description}</h6>
+    </div>
+    <div class=" col-6">
       <div class="card-body">
-        <h4 class="card-title text-light">${this.location}</h4>
-        <h5 class="card-text text-light pb-2">${this.title} / ${this.description}</h5>
+        <h5 class="card-title text-light">${this.location}</h5>
         <input id="temp"
           type="checkbox" 
           onchange="app.WeatherController.toggleTemp()">
         <p onclick="app.WeatherController.toggleTemp()" class="card-text text-light" id="fahrenheit">Temp: ${this.fahrenheit}°F / Feels Like: ${this.feelsLikeF}°F</p>
         <p class="card-text text-light" id="celsius">Temp: ${this.celsius}°C / Feels Like: ${this.feelsLikeC}°C</p>
         <ul>
-          <li class="card-text text-light">Humidity: ${this.humidity}%</li>
-          <li class="card-text text-light">Wind Velocity: ${this.wind}mph</li>
+          <li class="card-text text-light" style="font-size: .8rem;">Humidity: ${this.humidity}%</li>
+          <li class="card-text text-light" style="font-size: .8rem;">Wind Velocity: ${this.wind}mph</li>
         </ul>
       </div>
     </div>
+  </div>
+
     `
   }
 
