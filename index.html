@@ -16,31 +16,51 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">inspire_auth</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-          <a href="#/about" class="nav-link">About</a>
-        </div>
-      </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+  <header class="container-fluid">
+    <nav class="navbar navbar-dark navbar-expand bg-none text-light">
+      
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" style="opacity: .7;" id="authstate"></div>
     </nav>
   </header>
 
   <main class="container-fluid">
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-      aria-controls="offcanvasWithBothOptions">To-Do List</button>
-    
+      
+    <!-- <section class="row container mt-5 pt-5">
+      <div class="col-12 mt-5 pt-5">
+        <h1 id="clock" class="text-center text-light mb-5"></h1>
+      </div>
+    </section> -->
+
+    <div id="images"></div>
+
+    <div id="clock" class="row">
+      <div class="col-4 offset-5">
+        <iframe src="https://free.timeanddate.com/clock/i8uybx7n/n42/szw110/szh110/hoc09f/hbw0/hfc09f/cf100/hnce1ead6/fas30/fdi66/mqc000/mql15/mqw4/mqd98/mhc000/mhl15/mhw4/mhd98/mmc000/mml10/mmw1/mmd98/hhs2/hms2/hsv0" style="opacity: .8;" width="110" height="110"></iframe>
+      </div>
+    </div>
+
+    <div id="weather" class="row">
+        <!-- <div class=
+          "row justify-content-center">
+          <div class="col-12">
+            <h1 class="text-center text-light mb-5">Weather</h1>
+          </div>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h3 class="text-center text-light mb-5">Current Weather</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h3 class="text-center text-light mb-5">Forecast</h3>
+        </div>
+      </div> -->
+    </div>
+
+    <button id="offcanvas-btn" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions">To-Do List</button>   
+
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
       aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
@@ -48,8 +68,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-
-
+        <!-- NOTE START OFFCANVAS BODY -->
         <div class="row justify-content-center">
           <div id="toDoForm" class="col-12">
 
@@ -72,9 +91,13 @@
             </table>
           </div>
         </div>
-
-
+        <!-- NOTE END OFFCANVAS BODY -->
       </div>
+    </div>
+
+    <div id="imageInfo" class="row">
+
+      <!-- STUB ACTIVE IMAGE INFORMATION CARD ---------------------->
     </div>
 
   </main>

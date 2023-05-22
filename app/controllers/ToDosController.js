@@ -27,7 +27,7 @@ function _drawToDoCount() {
   const template = toDos.map(t => t.Template).join('')
   setHTML('toDos', template)
   document.getElementById('toDoCount').innerText = toDoCount.toString()
-  console.log('sssoooooo...')
+  // console.log('sssoooooo...')
 }
 
 
@@ -64,7 +64,7 @@ export class ToDosController {
 
     } catch (error) {
       console.log(error)
-      Pop.toast('Something went wrong', "error")
+      Pop.toast('Something went wrong', error)
     }
 
   }
