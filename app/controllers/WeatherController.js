@@ -10,10 +10,18 @@ function _drawWeather() {
   setHTML('weather', weather.WeatherTemplate)
 }
 
+function _drawTempButton() {
+  const weather = AppState.weather
+  console.log('drawing temp button')
+  setHTML('tempButton', weather.tempButton)
+  console.log(weather.tempButton)
+}
+
 export class WeatherController {
   constructor() {
     console.log('hello from weather controller')
     AppState.on('weather', _drawWeather)
+    AppState.on('weather', _drawTempButton)
     this.getWeather()
   }
   

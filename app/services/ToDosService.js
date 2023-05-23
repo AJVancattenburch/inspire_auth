@@ -7,7 +7,6 @@ class ToDosService {
     const res = await api.get('api/todos')
     const toDos = res.data.map(t => new ToDo(t))
     AppState.toDos = toDos
-    // TODO what do we do with these bugs????
   }
 
   async createToDo(formData) {
@@ -19,7 +18,6 @@ class ToDosService {
   }
 
   async editToDo(id) {
-    //FIXME the data on the next line is sending a request to ...todos/[object Object]
     const update = AppState.toDos.find(t => t.id == id)
     update.completed = !update.completed
     const res = await api.put('api/todos/' + id, update)
@@ -29,7 +27,6 @@ class ToDosService {
     }
     AppState.toDos.splice(index, 1, new ToDo(res.data))
     AppState.emit('toDos', id)
-    // TODO will this update draw?
   }
 
   async deleteToDo(id) {

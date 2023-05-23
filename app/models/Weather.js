@@ -13,6 +13,20 @@ export class Weather {
     this.toggle = false
   }
 
+  get tempButton() {
+    if (this.toggle) {
+      return /*html*/`
+      <label for="temp" class="text-light">Feels Like:${this.feelsLikeF} °F</label>
+      <h6 name="tempButton" id="tempButton" role="button" onclick="app.WeatherController.toggleTemp()" class="card-text text-light">${this.fahrenheit} + °F</h6> 
+      `
+    } else {
+      return /*html*/`
+      <label for="temp" class="text-light">Feels Like:${this.feelsLikeC} °C</label>
+      <h6 name="tempButton" id="tempButton" role="button" onclick="app.WeatherController.toggleTemp()" class="card-text text-light">${this.celsius} + °C</h6>`
+    }
+      
+  }
+
   get WeatherTemplate() {
     return /*html*/`
   <div class="card row bg-dark d-flex" style="opacity: .9;">
@@ -22,12 +36,8 @@ export class Weather {
     </div>
     <div class=" col-6">
       <div class="card-body">
-        <h5 class="card-title text-light">${this.location}</h5>
-        <input id="temp"
-          type="checkbox" 
-          onchange="app.WeatherController.toggleTemp()">
-        <p onclick="app.WeatherController.toggleTemp()" class="card-text text-light" id="fahrenheit">Temp: ${this.fahrenheit}°F / Feels Like: ${this.feelsLikeF}°F</p>
-        <p class="card-text text-light" id="celsius">Temp: ${this.celsius}°C / Feels Like: ${this.feelsLikeC}°C</p>
+        <h5 class="card-title text-light">${this.location}</h5>>
+        ${this.tempButton}        
         <ul>
           <li class="card-text text-light" style="font-size: .8rem;">Humidity: ${this.humidity}%</li>
           <li class="card-text text-light" style="font-size: .8rem;">Wind Velocity: ${this.wind}mph</li>

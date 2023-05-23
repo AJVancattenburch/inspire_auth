@@ -11,7 +11,7 @@ class WeatherService {
 
   async toggleTemp() {
     console.log('toggling temp')
-    document.querySelector('#temp').innerHTML = AppState.weather.toggle ? AppState.weather.fahrenheit : AppState.weather.celsius
+    document.querySelector('#tempButton').innerHTML = AppState.weather.toggle ? AppState.weather.fahrenheit : AppState.weather.celsius
     AppState.weather.toggle = !AppState.weather.toggle
     console.log(AppState.weather.toggle)
   }
